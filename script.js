@@ -1,28 +1,35 @@
 const arr = [1, 2, 3, 4, 1, 0, 2, 2];
 
-const divide = (arr, n) => {
-  // Write your code here
-	// “function divide(arr, n) {
-let currentSubArray=[];
-let currentSum = 0;
-let result = [];
-for (let item in arr) {
-    if(currentSum + item <= n) { 0+3 < 6 | 3 +1 < 6
-            currentSubArray.push(item); [0, 3, 1] //  currentSubArray when the loop closes
-            currentSum += item; [0+3+1] // Last iteration ends here
+// const divide = (arr, n) => {
+  let result = [];   // To store the list of subarrays
+  let currentSubarray = [];  // To store the current subarray
+  let currentSum = 0;  // To track the sum of the current subarray
+
+  for (let num of arr) {
+	  // Check if the current number can be added to the current subarray
+    if (currentSum + num <= n) {
+      currentSubarray.push(num);
+      currentSum += num;
     } else {
-        result.push(currentSubArray); // This line which returns the final output after collecting all sub-arrays is not executed
-        currentSubArray = [item];
-        currentSum=item;
-    }
-    if(currentSubArray.length > 0) {
-        result.push(currentSubArray);
-    }
-}
-return result;
+		// If not, add the current subarray to the result
+      result.push(currentSubarray);
 
+		 // Start a new subarray with the current number
+      currentSubarray = [num];
+      currentSum = num;
+    }
+  }
+  // Add the last subarray if it's not empty
+  if (currentSubarray.length > 0) {
+    result.push(currentSubarray);
+  }
 
+  return result;
 };
 
-const n = prompt("Enter n: ");
+//const arr = [1, 2, 3, 4, 1, 0, 2, 2];
+// Stub for user input
+const n = parseInt(prompt("Enter n: "), 10);
 alert(JSON.stringify(divide(arr, n)));
+// const n = prompt("Enter n: ");
+// alert(JSON.stringify(divide(arr, n)));
