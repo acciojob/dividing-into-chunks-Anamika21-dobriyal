@@ -1,6 +1,4 @@
-const arr = [1, 2, 3, 4, 1, 0, 2, 2];
-
-// const divide = (arr, n) => {
+ const divide = (arr, n) => {
   let result = [];   // To store the list of subarrays
   let currentSubarray = [];  // To store the current subarray
   let currentSum = 0;  // To track the sum of the current subarray
@@ -27,9 +25,7 @@ const arr = [1, 2, 3, 4, 1, 0, 2, 2];
   return result;
 };
 
-//const arr = [1, 2, 3, 4, 1, 0, 2, 2];
+const arr = [1, 2, 3, 4, 1, 0, 2, 2];
 // Stub for user input
 const n = parseInt(prompt("Enter n: "), 10);
 alert(JSON.stringify(divide(arr, n)));
-// const n = prompt("Enter n: ");
-// alert(JSON.stringify(divide(arr, n)));
